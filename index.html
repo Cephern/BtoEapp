@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>b^e</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="vue.js"></script>
+  </head>
+  <body>
+    <div id="vue-app">
+      <h1>b^e App</h1>
+
+      <div class="set">
+        <button v-on:click="inc">&#11165;</button>
+        <input
+          ref="input"
+          type="number"
+          v-on:input="change"
+          v-bind:value="exps"
+        />
+      </div>
+
+      <ul>
+        <Item
+          v-for="(exp, index) in arr"
+          v-bind:base="2"
+          v-bind:exp="exp"
+          v-bind:key="index"
+        />
+      </ul>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
